@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import HomePage from 
+import HomePage from "./Content/1 Pages/HomePage";
 
 function App() {
   return (
