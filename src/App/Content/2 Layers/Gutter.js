@@ -16,7 +16,6 @@ const WindowDiv = styled("div")`
     top: 0px;
     width: ${window.innerWidth}px;
     height: ${window.innerHeight}px;
-    z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
 `;
 

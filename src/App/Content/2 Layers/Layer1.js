@@ -17,7 +17,7 @@ const LayerDiv = styled("div")`
 export default function Layer1({width, triggerExit, tabIndex, enter}) {
     return (
         <LayerDiv>
-            {/* <header>
+            <header>
                 <nav>
                     <ul>
                         <li>
@@ -38,7 +38,7 @@ export default function Layer1({width, triggerExit, tabIndex, enter}) {
                                 width={width}
                                 focus={tabIndex === 2}
                                 enterSelect={tabIndex === 2 && enter}
-                                linkTo={"./page1"}
+                                linkTo={"./page2"}
                                 triggerExit={triggerExit}
                             >
                                 NavLink2
@@ -65,7 +65,7 @@ export default function Layer1({width, triggerExit, tabIndex, enter}) {
                     src={img}
                     alt="Mondrian painting" 
                 />
-            </main> */}
+            </main>
         </LayerDiv>
     );
 };

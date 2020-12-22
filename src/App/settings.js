@@ -1,8 +1,8 @@
 // SETTINGS ///////////////////////////////////////////////////////////////////
 
 // Aspect Ratio
-const ratioWidth = 3;
-const ratioHeight = 2;
+const ratioWidth = 2;
+const ratioHeight = 3;
 const ratio = ratioWidth / ratioHeight;
 
 // Size of gap when two layer containers.
