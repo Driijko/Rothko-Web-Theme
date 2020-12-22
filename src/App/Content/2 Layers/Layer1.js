@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 import NavLink from "../3 Elements/NavLink";
 
+import StyledImg from "../4 Styling/StyledImg";
+import img from "../5 Assets/visual/images/image.jpg";
+
 const LayerDiv = styled("div")`
     position: absolute;
     box-sizing: border-box;
@@ -52,33 +55,16 @@ export default function Layer1({width, triggerExit, tabIndex, enter}) {
                                 NavLink3
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                spatial={[0, 17, 20, 3]}
-                                width={width}
-                                focus={tabIndex === 4}
-                                enterSelect={tabIndex === 4 && enter}
-                                linkTo={"./page1"}
-                                triggerExit={triggerExit}
-                            >
-                                NavLink4
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                spatial={[0, 21, 20, 3]}
-                                width={width}
-                                focus={tabIndex === 5}
-                                enterSelect={tabIndex === 5 && enter}
-                                linkTo={"./page1"}
-                                triggerExit={triggerExit}
-                            >
-                                NavLink5
-                            </NavLink>
-                        </li>
                     </ul>
                 </nav>
             </header>
+            <main>
+                <StyledImg
+                    spatial={[0, 17, 20, 12]}
+                    src={img}
+                    alt="Mondrian painting" 
+                />
+            </main>
         </LayerDiv>
     );
 };

@@ -16,8 +16,11 @@ import useKey from "../../Tools/useKey";
 // Import helpers -----------------------------------------------------------
 import direction from "../4 Styling/helpers/direction";
 
-// STYLE ////////////////////////////////////////////////////////////////////
+// Sfx Imports -----------------------------------------------------------------
+import Audio from "../../Tools/Audio";
+import sfxEnterExit from "../5 Assets/audio/sfx/enterExit.mp3";
 
+// STYLE ////////////////////////////////////////////////////////////////////
 const transit = `opacity: 0`;
 const steady = `opacity: 1`;
 
@@ -35,16 +38,18 @@ function transistion(phase) {
 };
 
 const PageDiv = styled("div")`${props=>css`
-    background-color: black;
     ${transistion(props.phase)};
 `}`;
 
 // Settings /////////////////////////////////////////////////////////////////
-const maxFocusableElements = 5;
+const maxFocusableElements = 3;
 const enterTime = 4;
 const exitTime = 2;
 
 export default function HomePage(props) {
+
+    // SFX //////////////////////////////////////////////////////////////////
+    const [playSfx, setPlaySfx] = useState(0);
 
     // PHASE /////////////////////////////////////////////////////////////////
     const [phase, setPhase] = useState("enter");
@@ -52,8 +57,13 @@ export default function HomePage(props) {
     const [toSteadyTimerId, setToSteadyTimerId] = useState(null);
     const [leaveTo, setLeaveTo] = useState(null);
 
+    // This 'useEffect' is a bit complicated due to the possibility
+    // that a user may want to exit a page before the "enter" phase is
+    // finished. Making the enter phase cancelable requires us to include
+    // the 'checkReadyForSteady' and 'toSteadyTimerId' state variables.
     useEffect(()=> {
         if (phase === "enter") {
+            setPlaySfx(null);
             setToSteadyTimerId(setTimeout(() => {
                 if (phase === "enter") {
                     setCheckReadyForSteady(true);
@@ -83,6 +93,7 @@ export default function HomePage(props) {
     function triggerExit(to) {
         setLeaveTo(to);
         setPhase("exiting");
+        setPlaySfx(0);
     };
 
     // FOCUS and ENTERSELECT /////////////////////////////////////////////////
@@ -109,6 +120,7 @@ export default function HomePage(props) {
                 <Redirect to={leaveTo}/>
                 : null
             } 
+            <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
             <UniformDesign>
                 <Layer1 
                     tabIndex={tabIndex}

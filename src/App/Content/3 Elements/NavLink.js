@@ -84,11 +84,11 @@ export default function NavLink({children, spatial, width, focus, enterSelect, l
             onClick={handleClick}
         >
             <Audio 
-                sfx={[
+                audio={[
                     sfxNavLinkHighlight,
                     sfxNavLinkSelected,
                 ]}
-                playSfx={playSfx}
+                playAudio={playSfx}
             />
             {children}
         </StyledNavLink>
