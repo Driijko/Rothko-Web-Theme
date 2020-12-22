@@ -44,7 +44,7 @@ const maxFocusableElements = 5;
 const enterTime = 4;
 const exitTime = 2;
 
-export default function HomePage(props) {
+export default function Page1(props) {
 
     // PHASE /////////////////////////////////////////////////////////////////
     const [phase, setPhase] = useState("enter");
@@ -110,13 +110,13 @@ export default function HomePage(props) {
                 : null
             } 
             <UniformDesign>
+                <Layer2 />
+                <Gutter />
                 <Layer1 
                     tabIndex={tabIndex}
                     enter={enter}
-                    triggerExit={triggerExit}
+                    triggerExit={triggerExit}                
                 />
-                <Gutter />
-                <Layer2 />
             </UniformDesign>
         </PageDiv>
     );

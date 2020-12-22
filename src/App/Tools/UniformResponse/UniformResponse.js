@@ -1,7 +1,7 @@
 // IMPORTS ////////////////////////////////////////////////////////////////
 // Import Libraries -----------------------------------------------------------
 import {Children, cloneElement, useState} from "react";
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 // Import Components ----------------------------------------------------------
 import ContainerGrid from "./ContainerGrid";
@@ -12,23 +12,18 @@ import WindowResize from "../WindowResize";
 import {ratioWidth, ratioHeight, ratio, gapRatio} from "../../settings";
 
 // STYLE ///////////////////////////////////////////////////////////////////////
-const UniformDesignDiv = styled("div")`${props=>css`
+const UniformResponseDiv = styled("div")`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: ${props.width}px;
-    height: ${props.height}px;
-`}`
+    width: ${window.innerWidth}px;
+    height: ${window.innerHeight}px;
+`;
 
 // COMPONENT //////////////////////////////////////////////////////////////////////
 export default function UniformResponse({children}) {
 
     // STATE ///////////////////////////////////////////////////////////////////////
-
-    // Styled Div Size ----------------------------------------------------------
-    const [width] = useState(window.innerWidth);
-    const [height] = useState(window.innerHeight);
 
     // Layer Containers ------------------------------------------------------
     const [layerContainerSize] = useState(calcLayerContainerSize());
@@ -38,7 +33,8 @@ export default function UniformResponse({children}) {
 
     // EVENT HANDLERS //////////////////////////////////////////////////////////
 
-    // Refreshes the page after (delay) milliseconds.
+    // Refreshes the page after (delay) milliseconds 
+    // (see settings file in App folder for delay).
     WindowResize();
 
     // CHILDREN PROPS ////////////////////////////////////////////////////////////////
@@ -61,7 +57,7 @@ export default function UniformResponse({children}) {
 
     // RENDER //////////////////////////////////////////////////////////////////
     return (
-        <UniformDesignDiv width={width} height={height}>
+        <UniformResponseDiv>
             {layers[1]}
             <ContainerGrid
                 colNum={grid.colNum}
@@ -85,7 +81,7 @@ export default function UniformResponse({children}) {
                     : null
                 }
             </ContainerGrid>
-        </UniformDesignDiv>
+        </UniformResponseDiv>
     ) 
 }
 
