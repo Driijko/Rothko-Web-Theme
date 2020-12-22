@@ -52,7 +52,7 @@ export default function UniformResponse({children}) {
                 middle: grid.gap,
                 side: grid.gutters.side,
             });
-        }
+        };
     });
 
     // RENDER //////////////////////////////////////////////////////////////////
@@ -82,8 +82,8 @@ export default function UniformResponse({children}) {
                 }
             </ContainerGrid>
         </UniformResponseDiv>
-    ) 
-}
+    );
+};
 
 // HELPER FUNCTIONS //////////////////////////////////////////////////////////////
 
@@ -108,8 +108,8 @@ function calcLayerContainerSize() {
         );
         layerContainer.width = layerContainer.height * (ratioWidth / ratioHeight);
         return layerContainer;
-    }
-}
+    };
+};
 
 function calcGrid(layerNum, layerContainerSize) {
 
@@ -129,46 +129,59 @@ function calcGrid(layerNum, layerContainerSize) {
 
     if (ratio <= 1) {
 
-        grid.gutters.type = "vertical";
-
         const dualWidth = layerContainerSize.width * 2;
         const remainingWidth = window.innerWidth - dualWidth;
 
         if (isTwoContainers && window.innerWidth > dualWidth) {
             grid.colNum = 2;
+            grid.gutters.type = "vertical";
             if (gapRatio > 1) {
                 grid.gap = remainingWidth / gapRatio;
                 grid.gutters.side = (remainingWidth - grid.gap) / 2;
             }
             else {
                 grid.gap = remainingWidth;
-            }
+            };
         }
         else {
-            grid.gutters.side = remainingWidth / 2;
-        }
+            if (layerContainerSize.width === window.innerWidth) {
+                grid.gutters.type = "horizontal";
+                grid.gutters.side = (window.innerHeight - layerContainerSize.height) / 2;
+            }
+            else {
+                grid.gutters.type = "vertical";
+                grid.gutters.side = (window.innerWidth - layerContainerSize.width) / 2;
+            }
+        };
     }
     else {
-
-        grid.gutters.type = "horizontal";
 
         const dualHeight = layerContainerSize.height * 2;
         const remainingHeight = window.innerHeight - dualHeight;
 
         if (isTwoContainers && window.innerHeight > dualHeight) {
             grid.rowNum = 2;
+            grid.gutters.type = "horizontal";
             if (gapRatio > 1) {
                 grid.gap = remainingHeight / gapRatio;
                 grid.gutters.side = (remainingHeight - grid.gap) / 2;
             }
             else {
                 grid.gap = remainingHeight;
-            }
+            };
         }
         else {
-            grid.gutters.side = remainingHeight / 2;
-        }
-    }
+
+            if (layerContainerSize.height === window.innerHeight) {
+                grid.gutters.type = "vertical";
+                grid.gutters.side = (window.innerWidth - layerContainerSize.width) / 2;
+            }
+            else {
+                grid.gutters.type = "horizontal";
+                grid.gutters.side = (window.innerHeight - layerContainerSize.height) / 2;
+            };
+        };
+    };
 
     return grid;
-}
+};

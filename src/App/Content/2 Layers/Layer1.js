@@ -8,6 +8,7 @@ import img from "../5 Assets/visual/images/image.jpg";
 const LayerDiv = styled("div")`
     position: absolute;
     box-sizing: border-box;
+    border: 5px solid black;
     width: 100%;
     height: 100%;
     background-color: red;
@@ -16,7 +17,7 @@ const LayerDiv = styled("div")`
 export default function Layer1({width, triggerExit, tabIndex, enter}) {
     return (
         <LayerDiv>
-            <header>
+            {/* <header>
                 <nav>
                     <ul>
                         <li>
@@ -64,7 +65,7 @@ export default function Layer1({width, triggerExit, tabIndex, enter}) {
                     src={img}
                     alt="Mondrian painting" 
                 />
-            </main>
+            </main> */}
         </LayerDiv>
     );
 };
