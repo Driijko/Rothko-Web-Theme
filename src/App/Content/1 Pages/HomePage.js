@@ -117,21 +117,23 @@ export default function HomePage(props) {
     },[tab]);
 
     return (
-        <PageDiv phase={phase}>
-            {phase === "exit" ?
-                <Redirect to={leaveTo}/>
-                : null
-            } 
-            <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
-            <UniformDesign>
-                <Layer1 
-                    tabIndex={tabIndex}
-                    enter={enter}
-                    triggerExit={triggerExit}
-                />
-                <Gutter />
-                <Layer2 />
-            </UniformDesign>
-        </PageDiv>
+        <div style={{backgroundColor: "black"}}>
+            <PageDiv phase={phase}>
+                {phase === "exit" ?
+                    <Redirect to={leaveTo}/>
+                    : null
+                } 
+                <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
+                <UniformDesign>
+                    <Layer1 
+                        tabIndex={tabIndex}
+                        enter={enter}
+                        triggerExit={triggerExit}
+                    />
+                    <Gutter />
+                    <Layer2 />
+                </UniformDesign>
+            </PageDiv>
+        </div>
     );
 };

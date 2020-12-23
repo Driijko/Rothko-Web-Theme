@@ -18,10 +18,10 @@ function highlight(highlight) {
         return ``;
     }
     else if (highlight) {return css`
-        animation: ${direction(notHighlighted, highlighted)} 1.5s ease-out forwards;
+        animation: ${direction(notHighlighted, highlighted)} 0.1s ease-out forwards;
     `}
     else {return css`
-        animation: ${direction(highlighted, notHighlighted)} 1s ease-out forwards;
+        animation: ${direction(highlighted, notHighlighted)} 1s ease-in forwards;
     `};
 };
 
