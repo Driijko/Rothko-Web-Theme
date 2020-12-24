@@ -16,12 +16,15 @@ const WindowDiv = styled("div")`
     top: 0px;
     width: ${window.innerWidth}px;
     height: ${window.innerHeight}px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-image: radial-gradient(
+        ellipse 50% 100%,
+        black 70%, 
+        rgb(40, 40, 40)
+    );
 `;
 
 const GutterDiv = styled("div")`${({spatial})=>css`
     box-sizing: border-box;
-    border: 5px solid green;
     ${positioning(spatial)}
 `}`;
 

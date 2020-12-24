@@ -21,7 +21,7 @@ const gridMultiplier = 10;
 const delay = 2000;
 
 // COLOR SCHEME //////////////////////////////////////////////////////////////////
-const color1 = "hsl(0, 50%, 40%)";
+const color1 = "hsl(20, 70%, 60%)";
 const color2 = "hsl(0, 50%, 50%)";
 
 

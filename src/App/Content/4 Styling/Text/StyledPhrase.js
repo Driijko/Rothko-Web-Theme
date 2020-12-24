@@ -6,7 +6,7 @@ import {color2} from "../../../settings";
 
 const StyledPhrase = styled("p")`${({spatial, width})=>css`
     ${positioning(spatial)}
-    font-size: ${width / 25}px;
+    font-size: ${width / 20}px;
     color: ${color2};
     font-family: Montserrat, sans-serif;
     text-align: center;
