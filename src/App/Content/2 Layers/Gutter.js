@@ -1,5 +1,7 @@
 import styled, {css} from "styled-components";
 
+import direction from "../4 Styling/helpers/direction";
+
 function positioning(spatial) {
     return `
         position: absolute;
@@ -16,6 +18,7 @@ const WindowDiv = styled("div")`
     top: 0px;
     width: ${window.innerWidth}px;
     height: ${window.innerHeight}px;
+    animation: ${direction("opacity: 0;", "opacity: 1;")} 3s linear forwards;
     background-image: radial-gradient(
         ellipse 50% 100%,
         black 70%, 
