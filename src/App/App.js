@@ -1,5 +1,8 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
+// Import Universal Styles
+import "./App.css";
+
 // Import Pages ---------------------------------------------
 import SplashScreen from "./Content/1 Pages/SplashScreen";
 // Site Music 

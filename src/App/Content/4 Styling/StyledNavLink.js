@@ -5,35 +5,42 @@ import direction from "./helpers/direction"
 
 // HIGHLIGHT ///////////////////////////////////////////////////////
 
-const highlighted = `
-    color: white;
-    background-color: magenta;
-    border: 3px solid white;
-`;
-
-const notHighlighted = ``;
-
-function highlight(highlight) {
-    if (highlight === null) {
+function highlight(isHighlighted, width, colors) {
+    if (isHighlighted === null) {
         return ``;
     }
-    else if (highlight) {return css`
-        animation: ${direction(notHighlighted, highlighted)} 0.1s ease-out forwards;
+    else if (isHighlighted) {return css`
+        animation: ${direction(
+            `filter: blur(${width/300}px);
+            color: ${colors[2]};`
+            ,
+            `filter: blur(${width/ 1000}px);
+            color: ${colors[0]};`
+        )} 1s ease-out forwards;
     `}
     else {return css`
-        animation: ${direction(highlighted, notHighlighted)} 1s ease-in forwards;
+        animation: ${direction(
+            `filter: blur(${width/1000}px);
+            color: ${colors[0]};`
+            ,
+            `filter: blur(${width/300}px);
+            color: ${colors[2]};`
+        )} 2s ease-out forwards;
     `};
 };
 
-const StyledNavLink = styled.a`${props=>css`
-    ${positioning(props.spatial)}
-    font-size: ${props.width / 8}px;
-    text-align: center;
+const StyledNavLink = styled("a")`${({spatial, width, isHighlighted, colors})=>css`
+    ${positioning(spatial)}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${width / 10}px;
+    filter: blur(${width / 300}px);
+    color: ${colors[2]};
     cursor: pointer;
-    box-sizing: border-box;
-    border: 3px solid rgba(0, 0, 0, 0);
-    color: darkOrange;
-    ${highlight(props.highlight)}
+    ${highlight(isHighlighted, width, colors)}
 `}`;
 
 export default StyledNavLink;
+
+// ${highlight(isHighlighted, colors)}

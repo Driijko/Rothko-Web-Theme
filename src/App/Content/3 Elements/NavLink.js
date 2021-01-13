@@ -16,7 +16,6 @@ export default function NavLink({children, spatial, width, focus, enterSelect, l
     const [playSfx, setPlaySfx] = useState(null);
 
     // HIGHLIGHTING //////////////////////////////////////////////////////////////////////
-
     const [highlight, setHighlight] = useState(null);
 
     // Focus -----------------------------------------------------------
@@ -24,7 +23,7 @@ export default function NavLink({children, spatial, width, focus, enterSelect, l
         if (focus) {
             setHighlight(true);
         }
-        else if (highlight === true) {
+        else if (highlight) {
             setHighlight(false);
         };
     },[focus]);
