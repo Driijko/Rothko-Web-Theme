@@ -7,11 +7,11 @@ import SplashSteady from "../2 Layers/Splash/SplashSteady";
 import Gutter from "../2 Layers/Gutter";
 
 export default function SplashScreen(props) {
-    const [phase, setPhase] = useState("intro");
+    const [version, setVersion] = useState("intro");
 
     return (
         <UniformResponse>
-            {phase === "intro" ?
+            {version === "intro" ?
                 <SplashIntro />
                 : <SplashSteady />
             }

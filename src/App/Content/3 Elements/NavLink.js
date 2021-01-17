@@ -69,7 +69,7 @@ export default function NavLink({children, spatial, width, focus, enterSelect, l
             triggerExit(linkTo);
             setPlaySfx(1);
         };
-    },[selected])
+    },[selected]);
 
     // RENDER /////////////////////////////////////////////////////////////////////////////
 

@@ -85,20 +85,37 @@ export default function EnterButton({
             triggerExit(linkTo);
             // setPlaySfx(1);
         };
-    },[selected])
+    },[selected]);
+
+    // INTERACTIVITY /////////////////////////////////////////////////////
+    const [interactivity, setInteractivity] = useState("able");
+
+    useEffect(()=> {
+        if (interactivity !== "dormant") {
+            if (selected) {
+                setInteractivity("selected");
+            }
+            else if (highlight) {
+                setInteractivity("highlight");
+            }
+            else {
+                setInteractivity("able");              
+            };
+        }
+    }, [highlight, selected])
 
     // RENDER /////////////////////////////////////////////////////////////////////////////
 
     return (
         <div>
-            <FadeInRothkoDiv 
+            <RothkoDiv 
                 colors={colors}
                 spatial={spatial}
-                isHighlighted={highlight}
+                interactivity={interactivity}
                 width={width}
                 borderSize={20}
             />
-            <FadeInNavLink 
+            {/* <StyledNavLink 
                 colors={colors}
                 spatial={spatial}
                 width={width}
@@ -106,7 +123,15 @@ export default function EnterButton({
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}
-                text={children}
+            > */}
+            <StyledNavLink 
+                colors={colors}
+                spatial={spatial}
+                width={width}
+                interactivity={interactivity}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
             >
                 {/* <Audio 
                     audio={[
@@ -116,7 +141,7 @@ export default function EnterButton({
                     playAudio={playSfx}
                 /> */}
                 ENTER
-            </FadeInNavLink>
+            </StyledNavLink>
         </div>
 
     );   
