@@ -8,7 +8,7 @@ function transitions(interactivity, colors, width) {
     if (interactivity === "able") {
         return css`
             transition-duration: 2s;
-            filter: blur(${width/300}px);
+            filter: blur(${width/400}px);
             color: ${colors[2]};
         `;
     }

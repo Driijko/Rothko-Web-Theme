@@ -83,13 +83,15 @@ export default function SpashIntro({width}) {
                     width={width}
                     highlight={null}
                     colors={[
-                        "red",
+                        "hsl(15, 100%, 60%)",
                         "blue",
-                        "darkRed",
-                        "grey",
+                        "hsl(15, 50%, 40%)",
+                        "aqua",
                         "white",
                     ]}
                     focus={tabIndex === 1}
+                    enterSelect={enter}
+                    linkTo={"./home"}
                 >
                     ENTER
                 </EnterButton>

@@ -5,6 +5,7 @@ import "./App.css";
 
 // Import Pages ---------------------------------------------
 import SplashScreen from "./Content/1 Pages/SplashScreen";
+import HomePage from "./Content/1 Pages/HomePage";
 // Site Music 
 import Audio from "./Tools/Audio";
 import music from "./Content/5 Assets/audio/music/music.mp3";
@@ -12,13 +13,14 @@ import music from "./Content/5 Assets/audio/music/music.mp3";
 function App() {
   return (
     <div className="App">
-        <SplashScreen />
-        <Audio audio={[music]} playAudio={0} loop />
-        <Router>
-          <Switch>
-          </Switch>
-        </Router>
-      </div>
+      <Audio audio={[music]} playAudio={0} loop />
+      <Router>
+        <Switch>
+          <Route path="/home" component={HomePage} />
+          <Route exact path="/" component={SplashScreen} />
+        </Switch>
+      </Router>
+    </div>
   );
 };
 
