@@ -16,7 +16,7 @@ const FadeInRothkoDiv = styled(RothkoDiv)`
 
 const FadeInNavLink = styled(StyledNavLink)`
     opacity: 0;
-    animation: ${direction("opacity: 0", "opacity: 1")} 3s 8s linear forwards;
+    animation: ${direction("opacity: 0", "opacity: 1")} 3s 7s linear forwards;
 `;
 
 export default function EnterButton({
@@ -108,23 +108,14 @@ export default function EnterButton({
 
     return (
         <div>
-            <RothkoDiv 
+            <FadeInRothkoDiv 
                 colors={colors}
                 spatial={spatial}
                 interactivity={interactivity}
                 width={width}
                 borderSize={20}
             />
-            {/* <StyledNavLink 
-                colors={colors}
-                spatial={spatial}
-                width={width}
-                isHighlighted={highlight}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={handleClick}
-            > */}
-            <StyledNavLink 
+            <FadeInNavLink 
                 colors={colors}
                 spatial={spatial}
                 width={width}
@@ -141,7 +132,7 @@ export default function EnterButton({
                     playAudio={playSfx}
                 /> */}
                 ENTER
-            </StyledNavLink>
+            </FadeInNavLink>
         </div>
 
     );   

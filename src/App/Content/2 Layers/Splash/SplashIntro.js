@@ -29,7 +29,7 @@ const H1 = styled(StyledH1)`
 const Phrase = styled(StyledPhrase)`
     opacity: 0;
     color: hsl(200, 100%, 60%);
-    animation: ${direction("opacity: 0", "opacity: 1")} 3s 3s linear forwards;
+    animation: ${direction("opacity: 0", "opacity: 1")} 3s 4s linear forwards;
 `;
 
 const Logo = styled(StyledImg)`
@@ -42,7 +42,6 @@ export default function SpashIntro({width}) {
     return (
         <LayerDiv>
             <RothkoDiv2 spatial={[0, 0, 20, 19]} width={width} />
-            {/* <RothkoDiv1 spatial={[3, 3, 14, 10]} width={width} /> */}
             
             <header>
                 <EnterButton 
