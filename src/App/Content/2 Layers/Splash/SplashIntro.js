@@ -47,7 +47,7 @@ const Logo = styled(StyledImg)`
 // SETTINGS /////////////////////////////////////////////////////////////
 const maxFocusableElements = 1;
 
-export default function SpashIntro({width}) {
+export default function SpashIntro({width, triggerExit}) {
 
     // FOCUS and ENTERSELECT /////////////////////////////////////////////////
     const [tabIndex, setTabIndex] = useState(0);
@@ -85,13 +85,14 @@ export default function SpashIntro({width}) {
                     colors={[
                         "hsl(15, 100%, 60%)",
                         "blue",
-                        "hsl(15, 50%, 40%)",
+                        "hsl(15, 80%, 40%)",
                         "aqua",
                         "white",
                     ]}
                     focus={tabIndex === 1}
                     enterSelect={enter}
                     linkTo={"./home"}
+                    triggerExit={triggerExit}
                 >
                     ENTER
                 </EnterButton>

@@ -6,6 +6,7 @@ import UniformResponse from "../../Tools/UniformResponse/UniformResponse";
 
 import SplashIntro from "../2 Layers/Splash/SplashIntro";
 import Gutter from "../2 Layers/Gutter";
+import SiteDiv from "./SiteDiv";
 
 // SETTINGS ///////////////////////////////////////////////////////////
 const exitTime = 2;
@@ -48,15 +49,19 @@ export default function SplashScreen(props) {
     };
 
     return (
-        <PageDiv phase={phase}>
-            {phase === "exit" ?
-                <Redirect to={leaveTo}/>
-                : null
-            } 
-            <UniformResponse>
-                <SplashIntro triggerExit={triggerExit} />        
-                <Gutter />
-            </UniformResponse>
-        </PageDiv>
+        <div>
+            <SiteDiv /> 
+            <PageDiv phase={phase}>
+                {phase === "exit" ?
+                    <Redirect to={leaveTo}/>
+                    : null
+                }
+                <UniformResponse>
+                    <SplashIntro triggerExit={triggerExit} />        
+                    <Gutter />
+                </UniformResponse>
+            </PageDiv>
+        </div>
+
     );
 };

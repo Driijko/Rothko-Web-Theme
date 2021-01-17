@@ -1,18 +1,21 @@
+//IMPORTS //////////////////////////////////////////////////////////////
+// Import libraries --------------------------------------------------
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-// Import Universal Styles
+// Import Universal Styles ------------------------------------------
 import "./App.css";
 
 // Import Pages ---------------------------------------------
 import SplashScreen from "./Content/1 Pages/SplashScreen";
 import HomePage from "./Content/1 Pages/HomePage";
-// Site Music 
+
+// Import Music ---------------------------------------------- 
 import Audio from "./Tools/Audio";
 import music from "./Content/5 Assets/audio/music/music.mp3";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Audio audio={[music]} playAudio={0} loop />
       <Router>
         <Switch>

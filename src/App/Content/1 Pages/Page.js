@@ -7,6 +7,7 @@ import styled, {css} from "styled-components";
 // Import Components -----------------------------------------------------
 import UniformResponse from "../../Tools/UniformResponse/UniformResponse";
 import Gutter from "../2 Layers/Gutter";
+import SiteDiv from "./SiteDiv";
 
 // Import Custom Hooks ----------------------------------------------------
 import useKey from "../../Tools/useKey";
@@ -129,17 +130,21 @@ export default function Page({children, maxFocusableElements}) {
     // RENDER ////////////////////////////////////////////////////////////
 
     return (
-        <PageDiv phase={phase}>
-            {phase === "exit" ?
-                <Redirect to={leaveTo}/>
-                : null
-            } 
-            <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
-            <UniformResponse>
-                {layers[0]}
-                <Gutter />
-                {layers[1]}
-            </UniformResponse>
-        </PageDiv>
+        <div>
+            <SiteDiv />
+            <PageDiv phase={phase}>
+                {phase === "exit" ?
+                    <Redirect to={leaveTo}/>
+                    : null
+                } 
+                <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
+                <UniformResponse>
+                    {layers[0]}
+                    <Gutter />
+                    {layers[1]}
+                </UniformResponse>
+            </PageDiv>
+        </div>
+
     );
 };

@@ -18,7 +18,7 @@ const FadeInRothkoDiv = styled(RothkoDiv1)`
 
 const FadeInNavLink = styled(StyledNavLink)`
     opacity: 0;
-    animation: ${direction("opacity: 0", "opacity: 1")} 3s 7s linear forwards;
+    animation: ${direction("opacity: 0", "opacity: 1")} 3s 6s linear forwards;
 `;
 
 // ENTER BUTTON ////////////////////////////////////////////////////////
@@ -66,7 +66,7 @@ export default function EnterButton({
     // Trigger sound effect and exiting phase for layer -------------------
     useEffect(()=> {
         if (selected) {
-            // triggerExit(linkTo);
+            triggerExit(linkTo);
         };
     },[selected]);
 
@@ -95,7 +95,7 @@ export default function EnterButton({
                 spatial={spatial}
                 interactivity={interactivity}
                 width={width}
-                borderSize={20}
+                borderSize={15}
             />
             <FadeInNavLink 
                 colors={colors}
