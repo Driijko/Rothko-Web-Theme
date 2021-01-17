@@ -116,6 +116,8 @@ export default function HomePage(props) {
         };
     },[tab]);
 
+    // RENDER ////////////////////////////////////////////////////////////
+
     return (
         <div style={{backgroundColor: "black"}}>
             <PageDiv phase={phase}>

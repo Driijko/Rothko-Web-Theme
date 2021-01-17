@@ -1,15 +1,17 @@
+// IMPORTS /////////////////////////////////////////////////////////////
+// Import libraries -------------------------------------------------
 import {useState, useEffect} from "react";
 import styled, {css} from "styled-components";
 
+// Import components ------------------------------------------------
 import StyledNavLink from "../4 Styling/StyledNavLink";
-import RothkoDiv from "../4 Styling/RothkoDiv";
+import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
 
+// Import helpers ----------------------------------------------------
 import direction from "../4 Styling/helpers/direction";
 
-// SFX IMPORTS ///////////////////////////////////////////////////////////
-import Audio from "../../Tools/Audio";
-
-const FadeInRothkoDiv = styled(RothkoDiv)`
+// STYLE ////////////////////////////////////////////////////////////////
+const FadeInRothkoDiv = styled(RothkoDiv1)`
     opacity: 0;
     animation: ${direction("opacity: 0", "opacity: 1")} 4s linear forwards;
 `;
@@ -19,29 +21,23 @@ const FadeInNavLink = styled(StyledNavLink)`
     animation: ${direction("opacity: 0", "opacity: 1")} 3s 7s linear forwards;
 `;
 
+// ENTER BUTTON ////////////////////////////////////////////////////////
 export default function EnterButton({
-        colors, children, spatial, width, focus, enterSelect, 
-        linkTo, triggerExit
+        colors, spatial, width, focus, enterSelect, linkTo, triggerExit
     }) {
 
-    // SFX ///////////////////////////////////////////////////////////////////////////////
-    // Sound effects are passed to the Audio component in an array.
-    // We can determine which sound-effect to play by indicating an index for that 
-    // array with 'playSfx'.
-    // const [playSfx, setPlaySfx] = useState(null);
-
-    // HIGHLIGHTING //////////////////////////////////////////////////////////////////////
+    // HIGHLIGHTING ///////////////////////////////////////////////////////
     const [highlight, setHighlight] = useState(null);
 
     // Focus -----------------------------------------------------------
-    // useEffect(()=> {
-    //     if (focus) {
-    //         setHighlight(true);
-    //     }
-    //     else if (highlight) {
-    //         setHighlight(false);
-    //     };
-    // },[focus]);
+    useEffect(()=> {
+        if (focus) {
+            setHighlight(true);
+        }
+        else if (highlight) {
+            setHighlight(false);
+        };
+    },[focus]);
 
     // Mouse Handlers --------------------------------------------------
     function handleMouseEnter() {
@@ -51,18 +47,6 @@ export default function EnterButton({
     function handleMouseLeave() {
         setHighlight(false);
     };
-
-    // Sfx -----------------------------------------------------------------
-
-    useEffect(()=> {
-        // if (highlight) {
-        //     setPlaySfx(0);
-        // }
-        // else {
-        //     setPlaySfx(null);
-        // }
-        console.log(highlight);
-    },[highlight]);
 
     // SELECTION //////////////////////////////////////////////////////////////////////////
     const [selected, setSelected] = useState(false);
@@ -79,11 +63,10 @@ export default function EnterButton({
         };
     }, [enterSelect]);
 
-    // Trigger sound effect and exitting phase for layer -------------------
+    // Trigger sound effect and exiting phase for layer -------------------
     useEffect(()=> {
         if (selected) {
-            triggerExit(linkTo);
-            // setPlaySfx(1);
+            // triggerExit(linkTo);
         };
     },[selected]);
 
@@ -104,8 +87,7 @@ export default function EnterButton({
         }
     }, [highlight, selected])
 
-    // RENDER /////////////////////////////////////////////////////////////////////////////
-
+    // RENDER ///////////////////////////////////////////////////////////////////////
     return (
         <div>
             <FadeInRothkoDiv 
@@ -124,13 +106,6 @@ export default function EnterButton({
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}
             >
-                {/* <Audio 
-                    audio={[
-                        sfxNavLinkHighlight,
-                        sfxNavLinkSelected,
-                    ]}
-                    playAudio={playSfx}
-                /> */}
                 ENTER
             </FadeInNavLink>
         </div>

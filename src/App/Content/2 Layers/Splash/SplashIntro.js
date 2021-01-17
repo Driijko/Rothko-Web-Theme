@@ -1,16 +1,23 @@
+// IMPORTS //////////////////////////////////////////////////////////
+// Import Libraries ------------------------------------------------
+import {useState, useEffect} from "react";
 import styled from "styled-components";
 
-import RothkoDiv1 from "../../4 Styling/RothkoDivs/RothkoDiv1";
+// Import components -----------------------------------------------
 import RothkoDiv2 from "../../4 Styling/RothkoDivs/RothkoDiv2";
 import StyledH1 from "../../4 Styling/Headers/StyledH1";
 import StyledPhrase from "../../4 Styling/Text/StyledPhrase";
 import StyledImg from "../../4 Styling/StyledImg";
 import EnterButton from "../../3 Elements/EnterButton";
 
+// Import helper functions -----------------------------------------
 import direction from "../../4 Styling/helpers/direction";
+import useKey from "../../../Tools/useKey";
 
+// Import assets ---------------------------------------------------
 import logo from "../../5 Assets/visual/icons/logo448x143.png";
 
+// STYLE ///////////////////////////////////////////////////////////////
 const LayerDiv = styled("div")`
     position: absolute;
     box-sizing: border-box;
@@ -37,11 +44,38 @@ const Logo = styled(StyledImg)`
     animation: ${direction("opacity: 0", "opacity: 1")} 3s 5s linear forwards;
 `;
 
+// SETTINGS /////////////////////////////////////////////////////////////
+const maxFocusableElements = 1;
+
 export default function SpashIntro({width}) {
+
+    // FOCUS and ENTERSELECT /////////////////////////////////////////////////
+    const [tabIndex, setTabIndex] = useState(0);
+
+    // 'useKey' returns true if key is held down.
+    const tab = useKey("Tab");
+    const enter = useKey("Enter");
+
+    useEffect(()=> {
+        if (tab) {
+            if (tabIndex === maxFocusableElements) {
+                setTabIndex(1);
+            }
+            else {
+                setTabIndex(tabIndex + 1);
+            };
+        };
+    },[tab]);
+
+    // RENDER /////////////////////////////////////////////////////////
 
     return (
         <LayerDiv>
-            <RothkoDiv2 spatial={[0, 0, 20, 19]} width={width} />
+            <RothkoDiv2 
+                spatial={[0, 0, 20, 19]} 
+                width={width}
+                color={"hsl(200, 100%, 50%)"} 
+            />
             
             <header>
                 <EnterButton 
@@ -52,7 +86,10 @@ export default function SpashIntro({width}) {
                         "red",
                         "blue",
                         "darkRed",
+                        "grey",
+                        "white",
                     ]}
+                    focus={tabIndex === 1}
                 >
                     ENTER
                 </EnterButton>

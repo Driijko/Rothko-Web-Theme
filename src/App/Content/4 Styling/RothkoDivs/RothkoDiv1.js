@@ -1,16 +1,43 @@
 import styled, {css} from "styled-components";
 
 import positioning from "../helpers/positioning";
-import direction from "../helpers/direction";
 
-const RothkoDiv1 = styled("div")`${({spatial, width})=>css`
+function transitions(interactivity, colors) {
+    if (interactivity === "able") {
+        return css`
+            border-color: ${colors[2]};
+            transition-duration: 2s;
+        `;
+    }
+    else if (interactivity === "highlight") {
+        return css`
+            border-color: ${colors[0]};
+            transition-duration: 1s;
+        `;
+    }
+    else if (interactivity === "selected") {
+        return css`
+            background-color: ${colors[4]};
+            border-color: ${colors[3]};
+            transition-duration: 0s;
+        `;
+    }
+}
+
+const RothkoDiv1 = styled("div")`${({
+    spatial, 
+    width, 
+    interactivity, 
+    colors,
+    borderSize,
+})=>css`
     ${positioning(spatial)}
     box-sizing: border-box;
-    background-color: blue;
-    border: ${width / 20}px solid red;
-    filter: blur(${width / 80}px);
-    box-shadow: 0 0 20px black;
-    animation: ${direction("opacity: 0", "opacity: 1")} 3s linear forwards;
+    border-width: ${width/borderSize}px;
+    border-style: solid;
+    background-color: ${colors[1]};
+    filter: blur(${width / 100}px);
+    ${transitions(interactivity, colors)}
 `}`;
 
 export default RothkoDiv1;
