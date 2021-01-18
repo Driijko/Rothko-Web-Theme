@@ -22,7 +22,7 @@ function transitions(interactivity, colors) {
             transition-duration: 0s;
         `;
     }
-}
+};
 
 const RothkoDiv1 = styled("div")`${({
     spatial, 
@@ -30,13 +30,14 @@ const RothkoDiv1 = styled("div")`${({
     interactivity, 
     colors,
     borderSize,
+    blur,
 })=>css`
     ${positioning(spatial)}
     box-sizing: border-box;
     border-width: ${width/borderSize}px;
     border-style: solid;
     background-color: ${colors[1]};
-    filter: blur(${width / 100}px);
+    filter: blur(${width / blur}px);
     ${transitions(interactivity, colors)}
 `}`;
 

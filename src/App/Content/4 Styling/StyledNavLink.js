@@ -29,7 +29,7 @@ function transitions(interactivity, colors, width) {
 };
 
 const StyledNavLink = styled("a")`${({
-        spatial, width, interactivity, colors
+        spatial, width, interactivity, colors, fontSize
     })=>css`
         ${positioning(spatial)}
         ${transitions(interactivity, colors, width)}
@@ -37,7 +37,9 @@ const StyledNavLink = styled("a")`${({
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: ${width / 10}px;
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-size: ${width / fontSize}px;
         cursor: pointer;
 `}`;
 

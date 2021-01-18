@@ -34,11 +34,21 @@ const frames = keyframes`
 
 function animationSequence(borderSize, colors) {
     return keyframes`
-        0% {background-color: ${colors[0]}; ${borderSize ? `border-color: ${colors[1]};`: ``}}
-        50% {background-color: ${colors[1]}; ${borderSize ? `border-color: ${colors[0]};`: ``}}
-        100% {background-color: ${colors[0]}; ${borderSize ? `border-color: ${colors[1]};`: ``}}
+        0% {
+            background-color: ${colors[0]};
+            ${borderSize ? `border-color: ${colors[1]};`: ``}
+        }
+        50% {
+            background-color: ${colors[1]}; 
+            ${borderSize ? `border-color: ${colors[0]};`: ``}
+        }
+        100% {
+            background-color: ${colors[0]};
+            ${borderSize ? `border-color: ${colors[1]};`: ``}
+        }
     `;
 }
+
 
 const RothkoDiv3 = styled("div")`${({
     spatial, width, animationLength, colors, borderSize
@@ -47,7 +57,7 @@ const RothkoDiv3 = styled("div")`${({
     box-sizing: border-box;
     border-width: ${width/borderSize}px;
     border-style: solid;
-    filter: blur(${width / 100}px);
+    filter: blur(${width / 80}px);
     animation: ${animationSequence(borderSize, colors)} ${animationLength}s linear infinite;
 `}`;
 

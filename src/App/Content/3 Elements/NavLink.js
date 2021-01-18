@@ -6,8 +6,13 @@ import StyledNavLink from "../4 Styling/StyledNavLink";
 import Audio from "../../Tools/Audio";
 import sfxNavLinkHighlight from "../5 Assets/audio/sfx/navLinkHighlight.mp3";
 import sfxNavLinkSelected from "../5 Assets/audio/sfx/navLinkSelected.mp3";
+import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
+import RothkoDiv5 from "../4 Styling/RothkoDivs/RothkoDiv5";
 
-export default function NavLink({children, spatial, width, focus, enterSelect, linkTo, triggerExit}) {
+export default function NavLink({
+    children, spatial, width, focus, colors, enterSelect, linkTo, triggerExit,
+    fontSize
+}) {
 
     // SFX ///////////////////////////////////////////////////////////////////////////////
     // Sound effects are passed to the Audio component in an array.
@@ -71,25 +76,65 @@ export default function NavLink({children, spatial, width, focus, enterSelect, l
         };
     },[selected]);
 
+    // INTERACTIVITY /////////////////////////////////////////////////////
+    const [interactivity, setInteractivity] = useState("able");
+
+    useEffect(()=> {
+        if (interactivity !== "dormant") {
+            if (selected) {
+                setInteractivity("selected");
+            }
+            else if (highlight) {
+                setInteractivity("highlight");
+            }
+            else {
+                setInteractivity("able");              
+            };
+        }
+    }, [highlight, selected])
+
     // RENDER /////////////////////////////////////////////////////////////////////////////
 
     return (
-        <StyledNavLink 
-            spatial={spatial}
-            width={width}
-            highlight={highlight}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
-        >
-            <Audio 
-                audio={[
-                    sfxNavLinkHighlight,
-                    sfxNavLinkSelected,
+        <div>
+            <RothkoDiv5
+                spatial={[
+                    spatial[0] - 2,
+                    spatial[1] - 2,
+                    spatial[2] + 4,
+                    spatial[3] + 4,
                 ]}
-                playAudio={playSfx}
+                width={width}
+                interactivity={interactivity}
+                colors={[colors[2], colors[0]]}
+            />  
+            <RothkoDiv1
+                colors={colors}
+                borderSize={20}
+                spatial={spatial}
+                width={width}
+                interactivity={interactivity}
+                blur={200}
             />
-            {children}
-        </StyledNavLink>
+            <StyledNavLink 
+                colors={colors}
+                spatial={spatial}
+                width={width}
+                interactivity={interactivity}
+                fontSize={fontSize}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
+            >
+                <Audio 
+                    audio={[
+                        sfxNavLinkHighlight,
+                        sfxNavLinkSelected,
+                    ]}
+                    playAudio={playSfx}
+                />
+                {children}
+            </StyledNavLink>
+        </div>
     );   
 };

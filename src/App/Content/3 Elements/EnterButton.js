@@ -96,12 +96,14 @@ export default function EnterButton({
                 interactivity={interactivity}
                 width={width}
                 borderSize={15}
+                blur={100}
             />
             <FadeInNavLink 
                 colors={colors}
                 spatial={spatial}
                 width={width}
                 interactivity={interactivity}
+                fontSize={10}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}
