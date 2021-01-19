@@ -11,7 +11,7 @@ import RothkoDiv5 from "../4 Styling/RothkoDivs/RothkoDiv5";
 
 export default function NavLink({
     children, spatial, width, focus, colors, enterSelect, linkTo, triggerExit,
-    fontSize
+    fontSize, borderSize
 }) {
 
     // SFX ///////////////////////////////////////////////////////////////////////////////
@@ -110,7 +110,7 @@ export default function NavLink({
             />  
             <RothkoDiv1
                 colors={colors}
-                borderSize={20}
+                borderSize={borderSize}
                 spatial={spatial}
                 width={width}
                 interactivity={interactivity}

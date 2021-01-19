@@ -8,6 +8,7 @@ import "./App.css";
 // Import Pages ---------------------------------------------
 import SplashScreen from "./Content/1 Pages/SplashScreen";
 import HomePage from "./Content/1 Pages/HomePage";
+import ThemeHeaderPage from "./Content/1 Pages/Theme Section/ThemeHeaderPage";
 
 // Import Music ---------------------------------------------- 
 import Audio from "./Tools/Audio";
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/" component={SplashScreen} />
+          <Route path="/theme" component={ThemeHeaderPage} />
         </Switch>
       </Router>
     </div>
