@@ -12,7 +12,7 @@ const StyledHeader = styled("div")`${({
     ${positioning(spatial)}
     font-family: Montserrat Subrayada, sans-serif;
     text-align: center;
-    font-size: ${width/(headerLevel * 6)}px;
+    font-size: ${width/(headerLevel * 5)}px;
     color: ${colors[0]};
     text-shadow: 0 0 ${width/50}px ${colors[1]};
 `}`;

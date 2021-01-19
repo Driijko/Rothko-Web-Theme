@@ -9,61 +9,49 @@ import RothkoDiv3 from "../../../4 Styling/RothkoDivs/RothkoDiv3";
 
 // COMPONENT //////////////////////////////////////////////////////
 
-export default function ThemeHeaderLayer({width}) {
+export default function ThemeHeaderLayer({
+    width, tabIndex, triggerExit, enterSelect
+}) {
     // RENDER /////////////////////////////////////////////////////
     return (
         <LayerDiv>
             <RothkoDiv4
                 spatial={[0, 0, 20, 30]}
-                colors={[
-                    "red",
-                    "red",
-                ]}
+                colors={["red"]}
                 width={width}
-                borderSize={40}
             />
             <RothkoDiv3
                 spatial={[1, 0, 18, 30]}
                 width={width}
                 colors={[
-                    "white",
+                    "red",
                     "magenta",
                 ]}
                 borderSize={30}
-                animationLength={5}
+                animationLength={10}
             />
             <RothkoDiv2
-                spatial={[1, 0, 18, 9]}
+                spatial={[2, 2, 16, 6]}
                 width={width}
                 color={"hsl(300, 100%, 50%)"}
             />
-            <StyledHeader
-                spatial={[2, 2, 16, 2]}
-                width={width}
-                headerLevel={2}
-                colors={[
-                    "hsl(300, 100%, 40%)", 
-                    "hsl(300, 100%, 90%)", 
-                ]}
-            >
-                <h2>
-                    The Rothko<br/>
-                    Web Design Theme
-                </h2>
-            </StyledHeader>
             <ul>
                 <NavLink
                     spatial={[2, 9, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
-                        "hsl(30, 100%, 50%)",
                         "hsl(300, 100%, 50%)",
+                        "hsl(0, 100%, 100%)",
                         "blue",
                         "magenta",
                     ]}
                     fontSize={13}
-                    borderSize={25}
+                    borderSize={100}
+                    linkTo={"./theme/inspiration"}
+                    triggerExit={triggerExit}
+                    focus={tabIndex === 1}
+                    enterSelect={enterSelect && tabIndex === 1}
                 >
                     Inspiration
                 </NavLink>
@@ -72,14 +60,17 @@ export default function ThemeHeaderLayer({width}) {
                     width={width}
                     colors={[
                         "aqua",
-                        "red",
-                        "hsl(30, 100%, 50%)",
+                        "hsl(300, 100%, 50%)",
+                        "hsl(0, 100%, 100%)",
                         "blue",
                         "magenta",
                     ]}
                     fontSize={13}
-                    borderSize={25}
-
+                    borderSize={100}
+                    focus={tabIndex === 2}
+                    triggerExit={triggerExit}
+                    enterSelect={enterSelect && tabIndex === 2}
+                    linkTo={"./theme/design-philosophy"}
                 >
                     Design Philosophy
                 </NavLink>
@@ -88,13 +79,17 @@ export default function ThemeHeaderLayer({width}) {
                     width={width}
                     colors={[
                         "aqua",
-                        "hsl(30, 100%, 50%)",
                         "hsl(300, 100%, 50%)",
+                        "hsl(0, 100%, 100%)",
                         "blue",
                         "magenta",
                     ]}
                     fontSize={13}
-                    borderSize={25}
+                    borderSize={100}
+                    focus={tabIndex === 3}
+                    triggerExit={triggerExit}
+                    enterSelect={enterSelect && tabIndex === 3}
+                    linkTo={"./theme/tech"}
                 >
                     Tech
                 </NavLink>
@@ -103,13 +98,17 @@ export default function ThemeHeaderLayer({width}) {
                     width={width}
                     colors={[
                         "aqua",
-                        "red",
-                        "hsl(30, 100%, 50%)",
+                        "magenta",
+                        "hsl(0, 100%, 100%)",
                         "blue",
                         "magenta",
                     ]}
                     fontSize={13}
-                    borderSize={25}
+                    borderSize={100}
+                    focus={tabIndex === 4}
+                    triggerExit={triggerExit}
+                    enterSelect={enterSelect && tabIndex === 4}
+                    linkTo={"./theme/css"}
                 >
                     CSS
                 </NavLink>
@@ -118,17 +117,35 @@ export default function ThemeHeaderLayer({width}) {
                     width={width}
                     colors={[
                         "aqua",
-                        "hsl(30, 100%, 50%)",
                         "hsl(300, 100%, 50%)",
+                        "hsl(0, 100%, 100%)",
                         "blue",
                         "magenta",
                     ]}
                     fontSize={13}
-                    borderSize={25}
+                    borderSize={100}
+                    focus={tabIndex === 5}
+                    triggerExit={triggerExit}
+                    enterSelect={enterSelect && tabIndex === 5}
+                    linkTo={"./theme/audio"}
                 >
                     Audio
                 </NavLink>
             </ul>
+            <StyledHeader
+                spatial={[2, 2, 16, 2]}
+                width={width}
+                headerLevel={2}
+                colors={[
+                    "hsl(300, 100%, 30%)", 
+                    "hsl(300, 100%, 90%)", 
+                ]}
+            >
+                <h2>
+                    The Rothko<br/>
+                    Web Design Theme
+                </h2>
+            </StyledHeader>
         </LayerDiv>
     );
 };

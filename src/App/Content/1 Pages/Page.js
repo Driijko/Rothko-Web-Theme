@@ -103,7 +103,7 @@ export default function Page({children, maxFocusableElements}) {
 
     useEffect(()=> {
         if (tab) {
-            if (tabIndex === maxFocusableElements) {
+            if (tabIndex > maxFocusableElements) {
                 setTabIndex(1);
             }
             else {

@@ -20,6 +20,8 @@ function transitions(interactivity, colors, width) {
     else if (interactivity === "selected") {
         return css`
             transition-duration: 0s;
+            opacity: 1;
+            background-color: white;
         `;
     }
 };
