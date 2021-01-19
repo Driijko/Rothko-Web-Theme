@@ -3,6 +3,7 @@
 import LayerDiv from "../../LayerDiv";
 import StyledHeader from "../../../4 Styling/Headers/StyledHeader";
 import NavLink from "../../../3 Elements/NavLink";
+import HomeButton from "../../../3 Elements/HomeButton";
 import RothkoDiv4 from "../../../4 Styling/RothkoDivs/RothkoDiv4";
 import RothkoDiv2 from "../../../4 Styling/RothkoDivs/RothkoDiv2";
 import RothkoDiv3 from "../../../4 Styling/RothkoDivs/RothkoDiv3";
@@ -37,7 +38,7 @@ export default function ThemeHeaderLayer({
             />
             <ul>
                 <NavLink
-                    spatial={[2, 9, 16, 3]}
+                    spatial={[2, 8, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
@@ -56,7 +57,7 @@ export default function ThemeHeaderLayer({
                     Inspiration
                 </NavLink>
                 <NavLink
-                    spatial={[2, 13, 16, 3]}
+                    spatial={[2, 12, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
@@ -75,7 +76,7 @@ export default function ThemeHeaderLayer({
                     Design Philosophy
                 </NavLink>
                 <NavLink
-                    spatial={[2, 17, 16, 3]}
+                    spatial={[2, 16, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
@@ -94,7 +95,7 @@ export default function ThemeHeaderLayer({
                     Tech
                 </NavLink>
                 <NavLink
-                    spatial={[2, 21, 16, 3]}
+                    spatial={[2, 20, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
@@ -113,7 +114,7 @@ export default function ThemeHeaderLayer({
                     CSS
                 </NavLink>
                 <NavLink
-                    spatial={[2, 25, 16, 3]}
+                    spatial={[2, 24, 16, 3]}
                     width={width}
                     colors={[
                         "aqua",
@@ -133,7 +134,7 @@ export default function ThemeHeaderLayer({
                 </NavLink>
             </ul>
             <StyledHeader
-                spatial={[2, 2, 16, 2]}
+                spatial={[2, 1, 16, 2]}
                 width={width}
                 headerLevel={2}
                 colors={[
@@ -146,6 +147,25 @@ export default function ThemeHeaderLayer({
                     Web Design Theme
                 </h2>
             </StyledHeader>
+            <HomeButton
+                spatial={[6, 28, 8, 1]}
+                width={width}
+                colors={[
+                    "aqua",
+                    "hsl(300, 100%, 50%)",
+                    "hsl(0, 100%, 100%)",
+                    "blue",
+                    "magenta",
+                ]}
+                borderSize={200}
+                fontSize={20}
+                triggerExit={triggerExit}
+                focus={tabIndex === 6}
+                enterSelect={enterSelect && tabIndex=== 6}
+                linkTo={"./home"}
+            >
+                HOME
+            </HomeButton>
         </LayerDiv>
     );
 };

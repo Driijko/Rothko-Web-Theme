@@ -8,7 +8,7 @@ import RothkoLayer2 from "../../2 Layers/Theme/Theme Header/RothkoLayer2";
 export default function ThemeHeaderPage(props) {
     // RENDER //////////////////////////////////////////////////////////
     return (
-        <Page maxFocusableElements={5}>
+        <Page maxFocusableElements={6}>
             <ThemeHeaderLayer />
             <RothkoLayer2 />
         </Page>

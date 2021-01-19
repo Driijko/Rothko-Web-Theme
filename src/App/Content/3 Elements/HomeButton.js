@@ -9,7 +9,7 @@ import sfxNavLinkSelected from "../5 Assets/audio/sfx/navLinkSelected.mp3";
 import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
 import RothkoDiv5 from "../4 Styling/RothkoDivs/RothkoDiv5";
 
-export default function NavLink({
+export default function HomeButton({
     children, spatial, width, focus, colors, enterSelect, linkTo, triggerExit,
     fontSize, borderSize
 }) {
@@ -101,8 +101,8 @@ export default function NavLink({
                 spatial={[
                     spatial[0] - 2,
                     spatial[1] - 2,
-                    Math.min(spatial[2] + 4, 20),
-                    Math.min(spatial[3] + 4, 30),
+                    spatial[2],
+                    spatial[3],
                 ]}
                 width={width}
                 interactivity={interactivity}
