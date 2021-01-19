@@ -148,14 +148,14 @@ export default function ThemeHeaderLayer({
                 </h2>
             </StyledHeader>
             <HomeButton
-                spatial={[6, 28, 8, 1]}
+                spatial={[8, 28, 4, 1]}
                 width={width}
                 colors={[
                     "aqua",
                     "hsl(300, 100%, 50%)",
                     "hsl(0, 100%, 100%)",
-                    "blue",
-                    "magenta",
+                    "white",
+                    "white",
                 ]}
                 borderSize={200}
                 fontSize={20}

@@ -99,10 +99,10 @@ export default function HomeButton({
         <div>
             <RothkoDiv5
                 spatial={[
-                    spatial[0] - 2,
+                    spatial[0] - 4,
                     spatial[1] - 2,
-                    spatial[2],
-                    spatial[3],
+                    spatial[2] + 8,
+                    spatial[3] + 2,
                 ]}
                 width={width}
                 interactivity={interactivity}
