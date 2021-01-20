@@ -49,7 +49,7 @@ export default function ThemeHeaderLayer({
                     ]}
                     fontSize={13}
                     borderSize={100}
-                    linkTo={"./theme/inspiration"}
+                    linkTo={"./theme/inspiration/page1"}
                     triggerExit={triggerExit}
                     focus={tabIndex === 1}
                     enterSelect={enterSelect && tabIndex === 1}
