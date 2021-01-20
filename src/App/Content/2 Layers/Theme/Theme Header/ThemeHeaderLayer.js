@@ -25,7 +25,7 @@ export default function ThemeHeaderLayer({
                 spatial={[1, 0, 18, 30]}
                 width={width}
                 colors={[
-                    "red",
+                    "white",
                     "magenta",
                 ]}
                 borderSize={30}
@@ -43,7 +43,7 @@ export default function ThemeHeaderLayer({
                     colors={[
                         "aqua",
                         "hsl(300, 100%, 50%)",
-                        "hsl(0, 100%, 100%)",
+                        "hsl(230, 100%, 50%)",
                         "blue",
                         "magenta",
                     ]}
@@ -62,7 +62,7 @@ export default function ThemeHeaderLayer({
                     colors={[
                         "aqua",
                         "hsl(300, 100%, 50%)",
-                        "hsl(0, 100%, 100%)",
+                        "hsl(230, 100%, 50%)",
                         "blue",
                         "magenta",
                     ]}
@@ -81,7 +81,7 @@ export default function ThemeHeaderLayer({
                     colors={[
                         "aqua",
                         "hsl(300, 100%, 50%)",
-                        "hsl(0, 100%, 100%)",
+                        "hsl(230, 100%, 50%)",
                         "blue",
                         "magenta",
                     ]}
@@ -100,7 +100,7 @@ export default function ThemeHeaderLayer({
                     colors={[
                         "aqua",
                         "magenta",
-                        "hsl(0, 100%, 100%)",
+                        "hsl(230, 100%, 50%)",
                         "blue",
                         "magenta",
                     ]}
@@ -119,7 +119,7 @@ export default function ThemeHeaderLayer({
                     colors={[
                         "aqua",
                         "hsl(300, 100%, 50%)",
-                        "hsl(0, 100%, 100%)",
+                        "hsl(230, 100%, 50%)",
                         "blue",
                         "magenta",
                     ]}
@@ -153,7 +153,7 @@ export default function ThemeHeaderLayer({
                 colors={[
                     "aqua",
                     "hsl(300, 100%, 50%)",
-                    "hsl(0, 100%, 100%)",
+                    "hsl(230, 100%, 50%)",
                     "white",
                     "white",
                 ]}

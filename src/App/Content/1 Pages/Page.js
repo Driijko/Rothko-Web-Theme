@@ -141,7 +141,11 @@ export default function Page({children, maxFocusableElements}) {
                 <UniformResponse>
                     {layers[0]}
                     <Gutter />
-                    {layers[1]}
+                    {
+                        layers[1] !== undefined ?
+                        layers[1]:
+                        null
+                    }
                 </UniformResponse>
             </PageDiv>
         </div>
