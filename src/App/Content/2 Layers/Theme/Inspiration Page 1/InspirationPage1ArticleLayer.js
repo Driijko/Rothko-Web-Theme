@@ -10,7 +10,7 @@ export default function InspirationPage1ArticleLayer({
     return (
         <LayerDiv>
             <NavBar
-                spatial={[5, 28]}
+                spatial={[5, 27]}
                 triggerExit={triggerExit}
                 width={width}
                 enterSelect={enterSelect}
@@ -21,6 +21,10 @@ export default function InspirationPage1ArticleLayer({
                     "yellow",
                     "green",
                     "purple",
+                ]}
+                linksTo={[
+                    "/theme",
+                    "/theme/inspiration/page2"
                 ]}
             />
         </LayerDiv>

@@ -8,7 +8,7 @@ import RothkoLayer3 from
 
 export default function InspirationPage1(props) {
     return (
-        <Page maxFocusableElements={1}>
+        <Page maxFocusableElements={3}>
             <InspirationPage1ArticleLayer />
             <RothkoLayer3 />
         </Page>

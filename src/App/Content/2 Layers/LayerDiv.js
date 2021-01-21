@@ -7,6 +7,7 @@ const LayerDiv = styled("div")`
     height: 100%;
     background-color: black;
     border: 5px solid red;
+    z-index: 10;
 `;
 
 export default LayerDiv;

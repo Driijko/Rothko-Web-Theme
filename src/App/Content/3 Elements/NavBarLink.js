@@ -1,16 +1,20 @@
+// IMPORTS /////////////////////////////////////////////////////////////
+// Import libraries ---------------------------------------------------
 import {useState, useEffect} from "react";
 
+// Import components -------------------------------------------------
 import StyledNavLink from "../4 Styling/StyledNavLink";
+import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
+import RothkoDiv7 from "../4 Styling/RothkoDivs/RothkoDiv7";
 
-// SFX IMPORTS ///////////////////////////////////////////////////////////
+// Audio imports -------------------------------------------------------
 import Audio from "../../Tools/Audio";
 import sfxNavLinkHighlight from "../5 Assets/audio/sfx/navLinkHighlight.mp3";
 import sfxNavLinkSelected from "../5 Assets/audio/sfx/navLinkSelected.mp3";
-import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
 
 export default function NavBarLink({
     children, spatial, width, focus, colors, enterSelect, linkTo, triggerExit,
-    fontSize, borderSize
+    fontSize
 }) {
 
     // SFX ///////////////////////////////////////////////////////////////////////////////
@@ -96,14 +100,15 @@ export default function NavBarLink({
 
     return (
         <div> 
-            <RothkoDiv1
-                colors={colors}
-                borderSize={borderSize}
+            <RothkoDiv7
                 spatial={spatial}
+                colors={[
+                    colors[2], colors[0]
+                ]}
                 width={width}
                 interactivity={interactivity}
-                blur={200}
-            />
+
+            />          
             <StyledNavLink 
                 colors={colors}
                 spatial={spatial}
