@@ -16,11 +16,8 @@ export default function InspirationPage1ArticleLayer({
                 enterSelect={enterSelect}
                 tabIndex={tabIndex}
                 colors={[
-                    "red",
-                    "blue",
-                    "yellow",
-                    "green",
-                    "purple",
+                    "hsl(150, 100%, 50%)",
+                    "hsl(0, 100%, 50%)",
                 ]}
                 linksTo={[
                     "/theme",

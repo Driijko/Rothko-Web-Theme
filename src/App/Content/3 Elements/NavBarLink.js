@@ -3,8 +3,7 @@
 import {useState, useEffect} from "react";
 
 // Import components -------------------------------------------------
-import StyledNavLink from "../4 Styling/StyledNavLink";
-import RothkoDiv1 from "../4 Styling/RothkoDivs/RothkoDiv1";
+import StyledNavBarLink from "../4 Styling/StyledNavBarLink";
 import RothkoDiv7 from "../4 Styling/RothkoDivs/RothkoDiv7";
 
 // Audio imports -------------------------------------------------------
@@ -102,14 +101,12 @@ export default function NavBarLink({
         <div> 
             <RothkoDiv7
                 spatial={spatial}
-                colors={[
-                    colors[2], colors[0]
-                ]}
+                colors={colors}
                 width={width}
                 interactivity={interactivity}
 
             />          
-            <StyledNavLink 
+            <StyledNavBarLink 
                 colors={colors}
                 spatial={spatial}
                 width={width}
@@ -127,7 +124,7 @@ export default function NavBarLink({
                     playAudio={playSfx}
                 />
                 {children}
-            </StyledNavLink>
+            </StyledNavBarLink>
         </div>
     );   
 };
