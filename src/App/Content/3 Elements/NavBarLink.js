@@ -101,13 +101,13 @@ export default function NavBarLink({
         <div> 
             <RothkoDiv7
                 spatial={spatial}
-                colors={colors}
+                colors={[colors[1], colors[3]]}
                 width={width}
                 interactivity={interactivity}
 
             />          
             <StyledNavBarLink 
-                colors={colors}
+                colors={[colors[0], colors[2]]}
                 spatial={spatial}
                 width={width}
                 interactivity={interactivity}

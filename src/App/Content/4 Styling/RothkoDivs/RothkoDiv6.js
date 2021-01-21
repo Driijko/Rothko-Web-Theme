@@ -11,7 +11,7 @@ import direction from "../helpers/direction";
 
 // COMPONENT //////////////////////////////////////////////////////////
 const RothkoDiv6Top = styled("div")`${({
-    width, colors, spatial, animationLength
+    colors, spatial, animationLength
 })=>css`
     ${positioning(spatial)}
     animation: 
@@ -27,7 +27,7 @@ const RothkoDiv6Top = styled("div")`${({
 `}`;
 
 const RothkoDiv6Bottom = styled("div")`${({
-    width, colors, spatial, animationLength
+    colors, spatial, animationLength
 })=>css`
     ${positioning(spatial)}
     animation: 
@@ -50,13 +50,11 @@ export default function RothkoDiv6({
         <div>
             <RothkoDiv6Bottom
                 spatial={spatial}
-                width={width}
                 colors={[colors[0], colors[1]]}
                 animationLength={animationLength}
             />
             <RothkoDiv6Top
                 spatial={spatial}
-                width={width}
                 colors={[colors[2], colors[3]]}
                 animationLength={animationLength}
             />

@@ -6,7 +6,6 @@ const LayerDiv = styled("div")`
     width: 100%;
     height: 100%;
     background-color: black;
-    border: 5px solid red;
     z-index: 10;
 `;
 

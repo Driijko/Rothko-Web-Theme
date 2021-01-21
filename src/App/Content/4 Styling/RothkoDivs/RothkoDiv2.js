@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 import positioning from "../helpers/positioning";
 import direction from "../helpers/direction";
 
-const RothkoDiv2 = styled("div")`${({spatial, width, color, borderSize})=>css`
+const RothkoDiv2 = styled("div")`${({spatial, width, color})=>css`
     ${positioning(spatial)}
     box-sizing: border-box;
     background-color: ${color};
