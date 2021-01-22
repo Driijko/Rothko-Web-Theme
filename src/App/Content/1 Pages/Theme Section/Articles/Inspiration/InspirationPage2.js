@@ -6,7 +6,7 @@ import InspirationPage1ArticleLayer from
 import RothkoLayer3 from
 "../../../../2 Layers/Theme/Inspiration/RothkoLayer3";
 
-export default function InspirationPage1(props) {
+export default function InspirationPage2(props) {
     return (
         <Page maxFocusableElements={3}>
             <InspirationPage1ArticleLayer />

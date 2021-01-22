@@ -6,7 +6,7 @@ import StyledHeader from "../../../4 Styling/Headers/StyledHeader";
 import StyledPhrase from "../../../4 Styling/Text/StyledPhrase";
 import RothkoDiv2 from "../../../4 Styling/RothkoDivs/RothkoDiv2";
 
-export default function InspirationPage1ArticleLayer({
+export default function InspirationPage2Layer({
     width, triggerExit, enterSelect, tabIndex
 }) {
     // RENDER ////////////////////////////////////////////////////////////
@@ -46,14 +46,17 @@ export default function InspirationPage1ArticleLayer({
                 <h3>Inspiration</h3>
             </StyledHeader>
             <StyledPhrase
-                spatial={[4, 9, 12, 8]}
+                spatial={[4, 6, 12, 8]}
                 width={width}
                 color={"hsla(220, 100%, 70%, 0.7)"}
             >
+                <br/>
+                ...<br/>
                 Interpreting<br/><br/>
                 Mark Rothko's work<br/><br/>
                 as a blueprint<br/><br/>
-                for web design
+                for web design<br/>
+                ...
             </StyledPhrase>
         </LayerDiv>
     );

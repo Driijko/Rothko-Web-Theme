@@ -3,6 +3,7 @@
 import LayerDiv from "../../LayerDiv";
 import StyledHeader from "../../../4 Styling/Headers/StyledHeader";
 import NavLink from "../../../3 Elements/NavLink";
+import NavLink2 from "../../../3 Elements/NavLink2";
 import HomeButton from "../../../3 Elements/HomeButton";
 import RothkoDiv4 from "../../../4 Styling/RothkoDivs/RothkoDiv4";
 import RothkoDiv2 from "../../../4 Styling/RothkoDivs/RothkoDiv2";
@@ -26,7 +27,7 @@ export default function ThemeHeaderLayer({
                 width={width}
                 colors={[
                     "white",
-                    "magenta",
+                    "hsl(300, 100%, 50%)",
                 ]}
                 borderSize={30}
                 animationLength={10}
@@ -37,7 +38,7 @@ export default function ThemeHeaderLayer({
                 color={"hsl(300, 100%, 50%)"}
             />
             <ul>
-                <NavLink
+                <NavLink2
                     spatial={[2, 8, 16, 3]}
                     width={width}
                     colors={[
@@ -55,8 +56,8 @@ export default function ThemeHeaderLayer({
                     enterSelect={enterSelect && tabIndex === 1}
                 >
                     Inspiration
-                </NavLink>
-                <NavLink
+                </NavLink2>
+                <NavLink2
                     spatial={[2, 12, 16, 3]}
                     width={width}
                     colors={[
@@ -74,8 +75,8 @@ export default function ThemeHeaderLayer({
                     linkTo={"./theme/design-philosophy"}
                 >
                     Design Philosophy
-                </NavLink>
-                <NavLink
+                </NavLink2>
+                <NavLink2
                     spatial={[2, 16, 16, 3]}
                     width={width}
                     colors={[
@@ -93,8 +94,8 @@ export default function ThemeHeaderLayer({
                     linkTo={"./theme/tech"}
                 >
                     Tech
-                </NavLink>
-                <NavLink
+                </NavLink2>
+                <NavLink2
                     spatial={[2, 20, 16, 3]}
                     width={width}
                     colors={[
@@ -112,8 +113,8 @@ export default function ThemeHeaderLayer({
                     linkTo={"./theme/css"}
                 >
                     CSS
-                </NavLink>
-                <NavLink
+                </NavLink2>
+                <NavLink2
                     spatial={[2, 24, 16, 3]}
                     width={width}
                     colors={[
@@ -131,7 +132,7 @@ export default function ThemeHeaderLayer({
                     linkTo={"./theme/audio"}
                 >
                     Audio
-                </NavLink>
+                </NavLink2>
             </ul>
             <StyledHeader
                 spatial={[2, 1, 16, 2]}
@@ -152,7 +153,7 @@ export default function ThemeHeaderLayer({
                 width={width}
                 colors={[
                     "aqua",
-                    "hsl(300, 100%, 50%)",
+                    "hsla(300, 100%, 50%, 0)",
                     "hsl(230, 100%, 50%)",
                     "white",
                     "white",

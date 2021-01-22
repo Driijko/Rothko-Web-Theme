@@ -20,7 +20,6 @@ import Audio from "../../Tools/Audio";
 import sfxEnterExit from "../5 Assets/audio/sfx/enterExit.mp3";
 
 // STYLE ////////////////////////////////////////////////////////////////////
-
 function animate(phase) {
     if (phase === "enter") {
         return css`
@@ -38,7 +37,7 @@ const PageDiv = styled("div")`${({phase})=>css`
     ${animate(phase)};
 `}`;
 
-// Settings /////////////////////////////////////////////////////////////////
+// SETTINGS /////////////////////////////////////////////////////////////////
 const enterTime = 2;
 const exitTime = 2;
 
@@ -114,16 +113,22 @@ export default function Page({children, maxFocusableElements}) {
 
     // CHILDREN PROPS ////////////////////////////////////////////////////////////////
     // Here we add props to the child elements, aka  layers
-    const layers = Children.map(children, (child, index) => {
+    const layers = [];
+    Children.forEach(children, (child, index) => {
         if (index === 0) {
-            return cloneElement(child, {
-                tabIndex: tabIndex,
-                enterSelect: enter,
-                "triggerExit": triggerExit,
-            });
+            layers.push(
+                cloneElement(child, {
+                    tabIndex: tabIndex,
+                    enterSelect: enter,
+                    "triggerExit": triggerExit,
+                })
+            );
+            layers.push(
+                <Gutter />
+            );
         }
         else {
-            return cloneElement(child);
+            layers.push(child);
         };
     });
 
@@ -139,13 +144,7 @@ export default function Page({children, maxFocusableElements}) {
                 } 
                 <Audio audio={[sfxEnterExit]} playAudio={playSfx} />
                 <UniformResponse>
-                    {layers[0]}
-                    <Gutter />
-                    {
-                        layers[1] !== undefined ?
-                        layers[1]:
-                        null
-                    }
+                    {layers}
                 </UniformResponse>
             </PageDiv>
         </div>

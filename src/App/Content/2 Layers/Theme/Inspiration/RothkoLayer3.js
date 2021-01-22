@@ -29,6 +29,16 @@ export default function RothkoLayer3({
                 animationLength={20}
             />
             <RothkoDiv3
+                spatial={[4, 15, 12, 1]}
+                width={width}
+                colors={[
+                    "darkBlue",
+                    "aqua",
+                ]}
+                animationLength={20}
+                borderSize={50}
+            />
+            <RothkoDiv3
                 spatial={[0, 0, 20, 30]}
                 width={width}
                 colors={[
